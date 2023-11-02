@@ -2,6 +2,7 @@ const mongoose = require('mongoose');
 const express = require('express');
 const cors = require('cors');
 const tasksRouter = require('./routes/tasks');
+require('dotenv').config();
 
 // Luo Express-sovellus
 const app = express();
@@ -28,7 +29,7 @@ app.listen(PORT, () => {
 
 
 // Yhdistä MongoDB:hen
-const MONGODB_URI = 'mongodb+srv://eetuhav:3A2ZFYJUvtU4156s@cluster0.8upazzp.mongodb.net/?retryWrites=true&w=majority';  // Vaihda oikeaan URI:in, jos käytät pilvipalvelua kuten MongoDB Atlas.
+const MONGODB_URI = process.env.REACT_APP_MONGODB_URI; 
 
 mongoose.connect(MONGODB_URI, {
     useNewUrlParser: true,

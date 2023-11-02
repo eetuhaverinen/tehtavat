@@ -6,7 +6,6 @@ import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import './App.css';
 
 // Tuodaan sovelluksen omat komponentit
-import Home from './Home';
 import About from './About';
 import Users from './Users';
 import EditTaskForm from './EditTaskForm';
@@ -14,21 +13,22 @@ import AddTaskForm from './AddTaskForm';
 import TaskList from './Tasklist';
 import TaskModal from './TaskModal';
 
+
 function App() {
   const [tasks, setTasks] = useState([]);
   const [editingTask, setEditingTask] = useState(null);
   const [selectedTask, setSelectedTask] = useState(null);
-
+  
   // Haetaan tehtävät backendistä
   useEffect(() => {
-      fetch('http://localhost:5000/api/tasks')
+      fetch(`${process.env.REACT_APP_API_BASE_URL}/api/tasks`)
           .then(response => response.json())
           .then(data => setTasks(data))
           .catch(error => console.error('Virhe haettaessa tehtäviä:', error));
   }, []);
   const handleAddTask = (task) => {
     // POST-pyyntö backendiin uuden tehtävän lisäämiseksi
-    fetch('http://localhost:5000/api/tasks', {
+    fetch(`${process.env.REACT_APP_API_BASE_URL}/api/tasks`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -43,7 +43,7 @@ function App() {
 };
 const handleUpdateTask = (taskId, updatedTask) => {
   // PUT-pyyntö backendiin tehtävän päivittämiseksi
-  fetch(`http://localhost:5000/api/tasks/${taskId}`, {
+  fetch(`${process.env.REACT_APP_API_BASE_URL}/api/tasks/${taskId}`, {
       method: 'PUT',
       headers: {
           'Content-Type': 'application/json'
@@ -60,7 +60,7 @@ const handleUpdateTask = (taskId, updatedTask) => {
 
 const handleDeleteTask = (taskId) => {
 // DELETE-pyyntö backendiin tehtävän poistamiseksi
-fetch(`http://localhost:5000/api/tasks/${taskId}`, {
+fetch(`${process.env.REACT_APP_API_BASE_URL}/api/tasks/${taskId}`, {
     method: 'DELETE'
 })
 .then(() => {

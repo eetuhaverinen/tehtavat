@@ -1,3 +1,4 @@
+
 let cacheData = "appV2";
 
 this.addEventListener('install', (event) => {
