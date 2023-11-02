@@ -1,0 +1,33 @@
+.task {
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#click{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-content: stretch;
+    flex-wrap: wrap;
+    flex-direction: row;
+    width: 50%;
+}
+
+.task h3 {
+    margin: 0;
+    font-size: 18px;
+}
+
+.task p {
+    margin: 5px 0;
+}
+
+.task button {
+    padding: 5px 10px;
+    margin-left: 5px;
+}
