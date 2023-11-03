@@ -4,7 +4,9 @@ import './index.css';
 import App from './App';
 // import reportWebVitals from './reportWebVitals';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import swDev from './swDev'
+// import {register, unregister} from './serviceWorkerRegistration'
+import swDev from './swDev';
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -20,3 +22,4 @@ swDev();
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 // reportWebVitals();
+// register();

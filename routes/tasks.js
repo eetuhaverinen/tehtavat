@@ -74,6 +74,5 @@ router.delete('/:id', async (req, res) => {
 });
 
 
-// ... muut reitit (muokkaa, poista jne.)
 
 module.exports = router;
