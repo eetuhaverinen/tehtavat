@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import './TaskForm.css';
 
+
 function AddTaskForm({ onAdd }) {
     const [title, setTitle] = useState('');
     const [description, setDescription] = useState('');
-    const [deadline, setDeadline] = useState('');
+    const [deadline, setDeadline] = React.useState(new Date().toISOString().split('T')[0]);
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -20,19 +21,19 @@ function AddTaskForm({ onAdd }) {
 
     return (
         <form onSubmit={handleSubmit}>
-            <input 
-                type="text" 
-                placeholder="Tehtävä" 
+            <input
+                type="text"
+                placeholder="Tehtävä"
                 value={title}
                 onChange={e => setTitle(e.target.value)}
             />
-            <textarea 
+            <textarea
                 placeholder="Lisätiedot"
                 value={description}
                 onChange={e => setDescription(e.target.value)}
             ></textarea>
-            <input 
-                type="date" 
+            <input
+                type="date"
                 value={deadline}
                 onChange={e => setDeadline(e.target.value)}
             />
