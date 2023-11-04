@@ -23,12 +23,12 @@ function AddTaskForm({ onAdd }) {
         <form onSubmit={handleSubmit}>
             <input
                 type="text"
-                placeholder="Tehtävä"
+                placeholder="Kurssi"
                 value={title}
                 onChange={e => setTitle(e.target.value)}
             />
             <textarea
-                placeholder="Lisätiedot"
+                placeholder="Tehtävä"
                 value={description}
                 onChange={e => setDescription(e.target.value)}
             ></textarea>
