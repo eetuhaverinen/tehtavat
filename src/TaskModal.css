@@ -19,3 +19,8 @@
     max-width: 400px !important;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3) !important;
 }
+
+#modal-actions2{
+    display: flex;
+    justify-content: space-evenly;
+}

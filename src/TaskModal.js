@@ -21,4 +21,5 @@ function TaskModal({ task, onClose }) {
     );
 }
 
+
 export default TaskModal;
