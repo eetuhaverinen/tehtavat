@@ -31,3 +31,15 @@
     padding: 5px 10px;
     margin-left: 5px;
 }
+
+@media (max-width: 440px) {
+    #click {
+      flex-direction: column;
+    }
+    #napit{
+        display: flex;
+    }
+    .task button {
+        padding: 5px 10px;
+    }
+  }
