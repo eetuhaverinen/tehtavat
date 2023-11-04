@@ -21,14 +21,14 @@ function App() {
   
   // Haetaan tehtävät backendistä
   useEffect(() => {
-      fetch(`${process.env.REACT_APP_API_BASE_URL}/api/tasks`)
+      fetch(`https://tehtavat.onrender.com/api/tasks`)
           .then(response => response.json())
           .then(data => setTasks(data))
           .catch(error => console.error('Virhe haettaessa tehtäviä:', error));
   }, []);
   const handleAddTask = (task) => {
     // POST-pyyntö backendiin uuden tehtävän lisäämiseksi
-    fetch(`${process.env.REACT_APP_API_BASE_URL}/api/tasks`, {
+    fetch(`https://tehtavat.onrender.com/api/tasks`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -43,7 +43,7 @@ function App() {
 };
 const handleUpdateTask = (taskId, updatedTask) => {
   // PUT-pyyntö backendiin tehtävän päivittämiseksi
-  fetch(`${process.env.REACT_APP_API_BASE_URL}/api/tasks/${taskId}`, {
+  fetch(`https://tehtavat.onrender.com/api/tasks/${taskId}`, {
       method: 'PUT',
       headers: {
           'Content-Type': 'application/json'
@@ -60,7 +60,7 @@ const handleUpdateTask = (taskId, updatedTask) => {
 
 const handleDeleteTask = (taskId) => {
 // DELETE-pyyntö backendiin tehtävän poistamiseksi
-fetch(`${process.env.REACT_APP_API_BASE_URL}/api/tasks/${taskId}`, {
+fetch(`https://tehtavat.onrender.com/api/tasks/${taskId}`, {
     method: 'DELETE'
 })
 .then(() => {
