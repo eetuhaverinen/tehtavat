@@ -6,14 +6,17 @@ require('dotenv').config();
 
 // Luo Express-sovellus
 const app = express();
+const path = require('path');
 
 // Käytä CORS-middlewarea, jotta frontend voi tehdä pyyntöjä backendiin
 app.use(cors());
 app.use(express.json());
 
+app.use(express.static(path.join(__dirname, 'build')));
+
 // Testireitti varmistamaan, että palvelin toimii
 app.get('/', (req, res) => {
-    res.send('Hello from the server!');
+    res.sendFile(path.join(__dirname, 'build', 'index.html'));
 });
 
 app.use('/api/tasks', tasksRouter);
